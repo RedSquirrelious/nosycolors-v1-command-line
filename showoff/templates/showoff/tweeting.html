@@ -1,0 +1,15 @@
+#tweeting.html
+
+
+
+{% if latest_tweet_list %}
+	<ul>
+	{% for tweet in latest_tweet_list %}
+		<li><a href='/showoff/{{tweet.id}}/'>{{tweet.tweet_text}}</a></li>
+	</ul>
+	{% endfor %}
+{% else %}
+	<p>You haven't uploaded any tweets yet.</p>
+{% endif %}
+
+
