@@ -1,4 +1,4 @@
-from django.db import models
+# from django.db import models
 from django.utils import timezone
 import datetime
 import tweepy
@@ -37,11 +37,11 @@ api = tweepy.API(auth)
 # for status in tweepy.Cursor(api.user_timeline).items(2):
 # 	print(status.text)
 
-target = ''
+target = 'RedSquirrelious'
 
 # thing = api.user_timeline(screen_name=target, count=70, include_rts=False)
 
-thing = api.user_timeline(screen_name=target, count=70)
+thing = api.user_timeline(screen_name=target, count=7)
 
 # print(thing.text)
 
@@ -49,7 +49,7 @@ for tweet in thing:
 
 	# if not tweet.text.startswith('RT'):
 	# 	print(str(tweet.retweet_count))
-		# print(tweet.text)
+	print(tweet.text)
 	# else:
 	# 	print('you lose')
 # Create your models here.
