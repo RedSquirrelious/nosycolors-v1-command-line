@@ -17,7 +17,9 @@ def index(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ...
+            target_handle = form.cleaned_data['target_handle']
+
+            Tweet.objects.get_target_tweets(target_handle, api)
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks/')
 
